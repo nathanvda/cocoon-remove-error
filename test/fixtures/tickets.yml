@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  customer_id: 
+  status: 1
+  started_on: 2014-07-31 14:15:37
+  completed_on: 2014-07-31 14:15:37
+  priority: 1
+  type: 1
+
+two:
+  description: MyString
+  customer_id: 
+  status: 1
+  started_on: 2014-07-31 14:15:37
+  completed_on: 2014-07-31 14:15:37
+  priority: 1
+  type: 1

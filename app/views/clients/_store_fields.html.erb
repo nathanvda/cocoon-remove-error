@@ -1,0 +1,42 @@
+<div class="nested-fields">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Filial</h3>
+		</div>
+		<div class="panel-body">
+			<div class="form-group col-lg-4">
+				<%= f.label :name, "Nome" %>
+				<%= f.text_field :name, :class => "form-control", :required => true %>
+			</div>
+			<div class="form-group col-lg-5">
+				<%= f.label :name2, "Razão Social" %>
+				<%= f.text_field :name2, :class => "form-control", :required => true %>
+			</div>
+			<div class="form-group col-lg-3">
+				<%= f.label :cnpj, "CNPJ" %>
+				<%= f.text_field :cnpj, :class => "form-control", :required => true %>
+			</div>
+			<div class="form-group col-lg-4">
+				<%= f.label :address, "Logradouro" %>
+				<%= f.text_field :address, :class => "form-control", :required => true %>
+			</div>
+			<div class="form-group col-lg-1">
+				<%= f.label :number, "Número" %>
+				<%= f.text_field :number, :class => "form-control", :required => true %>
+			</div>
+			<div class="form-group col-lg-4">
+				<%= f.label :city, "Cidade" %>
+				<%= select_tag :city, options_for_select([['Campos dos Goytacazes', '1'],['São João da barra', '2']]), { :class => "form-control", :required => "true" } %>
+			</div>
+			<div class="form-group col-lg-3">
+				<%= f.label :mail, "E-mail" %>
+				<%= f.text_field :mail, :class => "form-control", :required => true %>
+			</div>
+			<div class="form-group col-lg-12">
+				<%= f.label :obs, "Observação" %>
+				<%= f.text_area :obs, :class => "form-control", :required => true %>
+			</div>
+			<%= link_to_remove_association '<i class="fa fa-minus-square"></i>'.html_safe, f, :class => "btn btn-danger btn-xs pull-right" %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,28 @@
+<%= simple_form_for @client, :class => "form-horizontal" do |f| %>
+
+<%= f.error_notification %>
+
+<div class="row">
+	<div class="form-group col-lg-12">
+		<%= f.label :name, "Nome" %>
+		<%= f.text_field :name, :class => "form-control", :required => true %>
+	</div>
+</div>
+
+<div id="stores">
+	<%= f.simple_fields_for :stores do |store| %>
+		<%= render "store_fields", :f => store %>
+	<% end %>
+	<div class="links">
+		<%= link_to_add_association '<i class="fa fa-plus-square"></i> Filial'.html_safe, f, :stores, :class => "btn btn-primary" %>
+	</div>
+</div>
+
+<hr>
+
+<div class="form-group">
+	<%= link_to "Cancelar", clients_path, :class => "btn btn-default btn-primary" %>
+	<%= f.submit "Cadastrar", :class => "btn btn-default btn-primary" %>
+</div>
+
+<% end %>

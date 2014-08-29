@@ -1,0 +1,58 @@
+<%= form_for @user, :class => "form-horizontal" do |f| %>
+<% if @user.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+	<ul>
+		<% @user.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div class="form-group col-lg-3">
+	<%= f.label :name, "Nome" %>
+	<%= f.text_field :name, :class => "form-control", autofocus: true %>
+</div>
+
+<div class="form-group col-lg-4">
+	<%= f.label :email, "E-mail" %>
+	<%= f.email_field :email, :class => "form-control" %>
+</div>
+
+<div class="form-group col-lg-4">
+	<%= f.label :password, "Senha" %>
+	<%= f.password_field :password, :class => "form-control", autocomplete: "off" %>
+</div>
+
+<div class="form-group col-lg-4">
+	<%= f.label :password_confirmation, "Confirmação de Senha" %>
+	<%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+</div>
+
+<div class="form-group col-lg-4">
+	<%= f.label :phone, "Telefone" %>
+	<%= f.text_field :phone, :class => "form-control", autofocus: true %>
+</div>
+
+<div class="form-group col-lg-12">
+	<% for role in User::ROLES %>
+	<%= check_box_tag "user[roles][#{role}]", role, @user.roles.include?(role), {:name => "user[roles][]"}%>
+	<%= label_tag "user_roles_#{role}", role.to_s.humanize %><br />
+	<% end %>
+	<%= hidden_field_tag "user[roles][]", "" %>
+</div>
+
+<hr>
+
+<div class="row">
+	<div class="form-group">
+		<div class="col-lg-2 col-lg-offset-10">
+			<%= link_to 'Cancelar', users_path, :class => "btn btn-default btn-primary" %>
+			<%= f.submit "Cadastrar", :class => "btn btn-default btn-primary" %>
+		</div>
+	</div>
+	<br>
+</div>
+
+<% end %>

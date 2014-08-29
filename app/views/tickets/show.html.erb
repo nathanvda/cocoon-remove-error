@@ -1,0 +1,14 @@
+<ol class="breadcrumb">
+    <li><a href="#">Cadastros</a></li>
+    <li class="active">Chamados</li>
+</ol>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @ticket.name %>
+</p>
+
+<%= link_to 'Editar', edit_ticket_path(@ticket) %> |
+<%= link_to 'Voltar', tickets_path %>
