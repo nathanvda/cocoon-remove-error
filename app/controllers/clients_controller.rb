@@ -81,6 +81,6 @@ class ClientsController < ApplicationController
 
   private
   def client_params
-    params.require(:client).permit(:name, stores_attributes: [:client_id, :name, :name2, :district, :address, :number, :complement, :cnpj, :city_id, :mail, :obs, :status, :phone, :phone2, :phone3, :sversion, :created_at, :updated_at, :_destroy])
+    params.require(:client).permit(:name, stores_attributes: [:id, :client_id, :name, :name2, :district, :address, :number, :complement, :cnpj, :city_id, :mail, :obs, :status, :phone, :phone2, :phone3, :sversion, :created_at, :updated_at, :_destroy])
   end
 end
